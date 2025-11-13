@@ -1,9 +1,9 @@
 {
   "version": 1,
   "include": [
-    "https://dragony.pages.dev/*"
+    "/*"
   ],
   "exclude": [
-    "https://dragony.pages.dev/protected/*"
+    "/protected/*"
   ]
 }
