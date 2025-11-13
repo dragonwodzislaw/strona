@@ -36,11 +36,28 @@ export default {
       
       // Hasło jest OK.
       // Pobierz plik /protected/strona1.html z "Assets" i go zwróć.
-      try {
-        return await env.ASSETS.fetch("/protected/strona1.html");
-      } catch (err) {
-        return new Response("Nie znaleziono chronionego pliku 1.", { status: 404 });
-      }
+// Hasło jest OK.
+      // Zwróć zawartość HTML bezpośrednio.
+      
+      // \/ \/ \/ WKLEJ TUTAJ ZAWARTOŚĆ SWOJEGO pliku strona1.html \/ \/ \/
+      const htmlStrony1 = `
+        <!DOCTYPE html>
+        <html lang="pl">
+        <head>
+            <meta charset="UTF-8">
+            <title>Strona Chroniona 1</title>
+        </head>
+        <body>
+            <h1>Witaj na Stronie 1</h1>
+            <p>To jest super tajna treść, dostępna po haśle A.</p>
+        </body>
+        </html>
+      `;
+      // ^ ^ ^ WKLEJ POWYŻEJ ^ ^ ^
+
+      return new Response(htmlStrony1, {
+        headers: { 'Content-Type': 'text/html;charset=UTF-8' },
+      });
     }
 
     // REGULA 2: Ktoś wchodzi na /link2 (taka sama logika)
