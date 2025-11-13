@@ -2,19 +2,43 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Strona Główna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Strona</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Moje Linki</h1>
-    <ul>
-        <li><a href="/link1">Chroniony Link 1 (wymaga hasła A)</a></li>
-        <li><a href="/link2">Chroniony Link 2 (wymaga hasła B)</a></li>
 
-        <li><a href="/protected/strona1.html">strona1 (link-przynęta)</a></li>
-        
-        <li style="display:none;">
-            <a href="/protected/strona2.html">Ukryta przynęta 2</a>
-        </li>
-    </ul>
+    <header class="banner">
+        <img src="https://via.placeholder.com/1200x400/1a1a1a/ffffff?text=MÓJ+BANNER" alt="Banner tytułowy">
+    </header>
+
+    <main class="container">
+
+        <article class="item">
+            <img src="https://via.placeholder.com/400x300/444/ffffff?text=Obrazek+1" alt="Opis obrazka 1">
+            <div class="item-content">
+                <h2><a href="/jeden.html">Pierwszy link do artykułu</a></h2>
+                <p>Krótki opis tego, co znajdzie się na stronie po kliknięciu.</p>
+            </div>
+        </article>
+
+        <article class="item">
+            <img src="https://via.placeholder.com/400x300/444/ffffff?text=Obrazek+2" alt="Opis obrazka 2">
+            <div class="item-content">
+                <h2><a href="#">Drugi link</a></h2>
+                <p>Tutaj kolejny opis, który zachęci do kliknięcia.</p>
+            </div>
+        </article>
+
+        <article class="item">
+            <img src="https://via.placeholder.com/400x300/444/ffffff?text=Obrazek+3" alt="Opis obrazka 3">
+            <div class="item-content">
+                <h2><a href="#">Trzeci i ostatni link</a></h2>
+                <p>I jeszcze jeden opisik na koniec.</p>
+            </div>
+        </article>
+
+    </main>
+
 </body>
 </html>
