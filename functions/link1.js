@@ -30,7 +30,7 @@ export async function onRequest(context) {
     try {
         // Pobiera zawartość z folderu /protected/strona1.html
         // env.ASSETS to specjalny obiekt w Pages Functions
-        return await env.ASSETS.fetch("/protected/strona1.html");
+        return await env.ASSETS.fetch("https://dragony.pages.dev/protected/strona1.html");
 
     } catch (err) {
         return new Response("Nie znaleziono chronionego pliku.", { status: 404 });
