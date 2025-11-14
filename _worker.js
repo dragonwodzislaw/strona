@@ -22,43 +22,44 @@ export default {
     // --- REGULAMIN DOSTĘPU ---
 
     // REGULA 1: Ktoś wchodzi na /link1
-    if (pathname.startsWith("/link1")) {
+    if (pathname.startsWith("/komunia_adama")) {
       const authHeader = request.headers.get("Authorization");
 
       // Jeśli hasło jest błędne lub go nie ma...
       if (authHeader !== HASLA.link1) {
         // ...pokaż okienko logowania.
-        return new Response("Nieautoryzowany dostęp (Strefa 1)", {
+        return new Response("Nie działa (Strefa 1)", {
           status: 401,
           headers: { 'WWW-Authenticate': 'Basic realm="Strefa 1"' },
         });
       }
       
-      // Hasło jest OK.
-      // Pobierz plik /protected/strona1.html z "Assets" i go zwróć.
-// Hasło jest OK.
-      // Zwróć zawartość HTML bezpośrednio.
-      
-      // \/ \/ \/ WKLEJ TUTAJ ZAWARTOŚĆ SWOJEGO pliku strona1.html \/ \/ \/
-      const htmlStrony1 = `
-        <!DOCTYPE html>
-        <html lang="pl">
-        <head>
-            <meta charset="UTF-8">
-            <title>Strona Chroniona 1</title>
-        </head>
-        <body>
-            <h1>Witaj na Stronie 1</h1>
-            <p>To jest super tajna treść, dostępna po haśle A.</p>
-        </body>
-        </html>
-      `;
-      // ^ ^ ^ WKLEJ POWYŻEJ ^ ^ ^
+            // Zwróć zawartość HTML bezpośrednio.
+            
+            // *******************************************************
+            // ******************** KOMUNIA ADAMA ********************
+            // *******************************************************
+            
+            const htmlStrony1 = `
+              <!DOCTYPE html>
+              <html lang="pl">
+              <head>
+                  <meta charset="UTF-8">
+                  <title>Komunia Adama</title>
+              </head>
+              <body>
+                  <h1>film</h1>
+                  <p>tekst</p>
+              </body>
+              </html>
+            `;
+            // ^ ^ ^ WKLEJ POWYŻEJ ^ ^ ^
 
-      return new Response(htmlStrony1, {
-        headers: { 'Content-Type': 'text/html;charset=UTF-8' },
-      });
-    }
+            return new Response(htmlStrony1, {
+              headers: { 'Content-Type': 'text/html;charset=UTF-8' },
+            });
+          }
+          // *******************************************************
 
     // REGULA 2: Ktoś wchodzi na /link2 (taka sama logika)
     if (pathname.startsWith("/link2")) {
