@@ -50,10 +50,7 @@ export default {
               </head>
               <body>
                   <h1>film</h1>
-                  
-                  <iframe src="https://youtu.be/c2N8ePjtgXs" width="560" height="315" title="A YouTube video" frameborder="0" allowfullscreen></iframe>
-
-
+                  <iframe class="youtube-video" width="560" height="300" title="NLM embedded YouTube video player example" src="https://www.youtube.com/embed/GQigLJ6iV4Y?html5=1&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   <p>tekst</p>
               </body>
               </html>
