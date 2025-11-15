@@ -46,9 +46,11 @@ export default {
               <head>
                   <meta charset="UTF-8">
                   <title>Komunia Adama</title>
+                  <link rel="stylesheet" href="style.css">
               </head>
               <body>
                   <h1>film</h1>
+                  <iframe class="youtube-video" title="NLM embedded YouTube video player example" src="https://www.youtube.com/embed/GQigLJ6iV4Y?html5=1&enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                   <p>tekst</p>
               </body>
               </html>
