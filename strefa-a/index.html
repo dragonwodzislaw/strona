@@ -3,35 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strefa A - Wideo</title>
+    <title>Strefa A - Galeria</title>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
     <style>
-        body { background: #1a1a1a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .container { width: 90%; max-width: 800px; }
-        h1 { text-align: center; margin-bottom: 20px; }
+        /* --- BAZA --- */
+        body { 
+            background: #121212; 
+            color: white; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 20px;
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+        }
+
+        h1 { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            font-weight: 300;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+        }
+
+        /* --- SIATKA (GRID) --- */
+        .video-grid {
+            display: grid;
+            /* To magiczna linijka: tworzy kolumny automatycznie */
+            /* minmax(300px, 1fr) oznacza: kolumna ma min 300px szerokości, a jak jest miejsce to się rozciąga */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; /* Odstęp między kartami */
+        }
+
+        /* --- KARTA WIDEO (RAMKA) --- */
+        .video-card {
+            background: #1e1e1e;
+            border-radius: 12px; /* Zaokrąglone rogi */
+            overflow: hidden; /* Żeby wideo nie wystawało poza rogi */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Cień pod kartą */
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px); /* Lekkie uniesienie po najechaniu */
+            border-color: #555;
+        }
+
+        /* Tytuł pod filmem */
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .video-desc {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Przycisk powrotu */
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #aaa;
+            text-decoration: none;
+        }
+        .back-btn:hover { color: white; }
+
     </style>
 </head>
 <body>
 
 <div class="container">
+    <a href="/" class="back-btn">← Wróć do wyboru stref</a>
     <h1>Wideo Strefy A</h1>
     
-    <video id="player" playsinline controls data-poster="/sciezka/do/okladki.jpg">
-        <source src="https://pub-9531017acc3d4c738eb7f5f0c3df7cbd.r2.dev/Borzeccy_Cichonie_Dragony.mp4" type="video/mp4" />
-    </video>
-</div>
+    <div class="video-grid">
+        
+        <div class="video-card">
+            <video class="player" playsinline controls data-poster="/img/okladka1.jpg">
+                <source src="https://pub-9531017acc3d4c738eb7f5f0c3df7cbd.r2.dev/Gluzek.mp4" type="video/mp4" />
+            </video>
+            <div class="video-info">
+                <div class="video-title">Tytuł Pierwszego Filmu</div>
+                <div class="video-desc">Krótki opis o czym to jest.</div>
+            </div>
+        </div>
 
-<div class="container">
-    <h1>Wideo Strefy A</h1>
-    
-    <video id="player" playsinline controls data-poster="/sciezka/do/okladki.jpg">
-        <source src="https://pub-9531017acc3d4c738eb7f5f0c3df7cbd.r2.dev/Gluzek.mp4" type="video/mp4" />
-    </video>
+        <div class="video-card">
+            <video class="player" playsinline controls data-poster="/img/okladka2.jpg">
+                <source src="https://pub-9531017acc3d4c738eb7f5f0c3df7cbd.r2.dev/Borzeccy_Cichonie_Dragony.mp4" type="video/mp4" />
+            </video>
+            <div class="video-info">
+                <div class="video-title">Drugi Film</div>
+                <div class="video-desc">Data nagrania: 2024-05-20</div>
+            </div>
+        </div>
+
+        <div class="video-card">
+            <video class="player" playsinline controls>
+                <source src="https://pub-twoj-bucket.r2.dev/film3.mp4" type="video/mp4" />
+            </video>
+            <div class="video-info">
+                <div class="video-title">Trzeci Film</div>
+                <div class="video-desc">Dodatkowy opis wideo.</div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script>
-    const player = new Plyr('#player');
+    // Ta linijka znajduje WSZYSTKIE elementy z klasą .player i robi z nich odtwarzacze
+    const players = Plyr.setup('.player');
 </script>
 
 </body>
