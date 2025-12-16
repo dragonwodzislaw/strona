@@ -122,8 +122,16 @@
 
 <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
 <script>
-    // Ta linijka znajduje WSZYSTKIE elementy z klasą .player i robi z nich odtwarzacze
-    const players = Plyr.setup('.player');
+    const players = Plyr.setup('.player', {
+        // Konfiguracja naprawiająca mobilki
+        fullscreen: {
+            enabled: true, 
+            fallback: true, 
+            iosNative: true // KLUCZOWE: Wymusza natywny player iOS na pełnym ekranie
+        },
+        // Ukrywamy kontrolki systemowe, żeby Plyr miał kontrolę, dopóki nie wejdzie fullscreen
+        playsinline: true 
+    });
 </script>
 
 </body>
