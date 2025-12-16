@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strefa A - Wideo</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <style>
+        body { background: #1a1a1a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { width: 90%; max-width: 800px; }
+        h1 { text-align: center; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Wideo Strefy A</h1>
+    
+    <video id="player" playsinline controls data-poster="/sciezka/do/okladki.jpg">
+        <source src="https://pub-9531017acc3d4c738eb7f5f0c3df7cbd.r2.dev/Borzeccy_Cichonie_Dragony.mp4" type="video/mp4" />
+    </video>
+</div>
+
+<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<script>
+    const player = new Plyr('#player');
+</script>
+
+</body>
+</html>
