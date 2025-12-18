@@ -7,7 +7,7 @@ export async function onRequest(context) {
   // Możesz wygenerować własny ciąg na stronie base64encode.org wpisując "login:haslo"
   
   // Tutaj przykładowo: user:hasloA
-  if (authHeader !== 'Basic dXNlcjpoYXNsb0E=') {
+  if (authHeader !== 'Basic ZDpy') {
     return new Response('Wymagane logowanie do Strefy A', {
       status: 401,
       headers: {
